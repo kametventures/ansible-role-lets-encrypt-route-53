@@ -15,6 +15,6 @@ DNS.1 = {{ ler53_cert_common_name }}
   {% if env == 'prod' %}
     DNS.{{ loop.index + 1 }} = {{ san }}.{{ ler53_route_53_domain }}
   {% else %}
-      DNS.{{ loop.index + 1 }} = {{ san }}.{{ env }}.{{ ler53_route_53_domain }}
+    DNS.{{ loop.index + 1 }} = {{ san }}.{{ env }}.{{ ler53_route_53_domain }}
   {% endif %}
 {% endfor %}
